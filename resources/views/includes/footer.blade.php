@@ -33,7 +33,7 @@
 	$(function() {
 	    var goldvalue = [
 	    @foreach($golds as $gold)
-	    	[{{strtotime($gold->created_at)}}, {{ $gold->value }}],
+	    	[{{strtotime($gold->created_at)}} * 1000, {{ $gold->value }}],
 	    @endforeach
 	    ];
 
@@ -66,7 +66,7 @@
 	            tooltip: true,
 	            tooltipOpts: {
 	                content: "%s for %x was %y",
-	                xDateFormat: "%y-%m-%d",
+	                xDateFormat: "%y-%m-%d %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);
