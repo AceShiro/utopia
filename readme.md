@@ -1,4 +1,4 @@
-## Utopia - Albion Online Gold Market Tool v0.1.3
+## Utopia - Albion Online Gold Market Tool v0.1.4
 
 This project is a web application designed to store and track the gold market of Albion Online, as the tools in-game allow only to track the market on a 24 hours period.
 
