@@ -1,4 +1,4 @@
-## Utopia - Albion Online Gold Market Tool v0.1.2
+## Utopia - Albion Online Gold Market Tool v0.1.3
 
 This project is a web application designed to store and track the gold market of Albion Online, as the tools in-game allow only to track the market on a 24 hours period.
 
@@ -7,12 +7,12 @@ In the actual version, the gold value still need to be add manually and regularl
 
 ## Currently implemented
 
-- Simple Dashboard with Panels redirecting to the different pages (WIP)
-- Gold Market Page (Gold Responsive Flot Chart, Raw Data Dynamic Table, Add, Edit, Delete a Value)
+- Gold Market Page (For guest: Gold Responsive Flot Chart | For Admins: Raw Data Dynamic Table, Add, Edit, Delete a Value)
 - Authentication System
 
 
 ## To Be Implemented
 
-- Permissions System (Roles & Access Rights)
 - Upgrade of the Flot Chart to display the Exchange Rate between Gold and Euros
+- Raw Data Table for Guests
+- Panels with more detailled infos (For example: 24h High, 24H Low, 24H Change)

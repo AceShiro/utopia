@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Utopia | Spassiba !! ~</a>
+                <a class="navbar-brand" href="/">Utopia | Gold Market Tracker</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -125,11 +125,6 @@
                                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                                </li>
-                                <li class="divider"></li>
                                 <li>
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
@@ -154,9 +149,11 @@
                                 <i class="fa fa-sign-in fa-fw"></i> <i class="fa fa-caret-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
+                            <!--
                                 <li><a href="{{ url('/register') }}"><i class="fa fa-sign-in fa-fw"></i> Register</a>
                                 </li>
                                 <li class="divider"></li>
+                                -->
                                 <li><a href="{{ url('/login') }}"><i class="fa fa-lock fa-fw"></i> Login</a>
                                 </li>
                             </ul>
@@ -166,33 +163,4 @@
                 @endif
 
             </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li class="{{ Request::is('/') ? "active" : "" }}">
-                            <a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-
-                        <li class="{{ Request::is('/golds') ? "active" : "" }}">
-                            <a href="/golds"><i class="fa fa-bar-chart-o fa-fw"></i> Gold Charts</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
         </nav>

@@ -27,7 +27,7 @@
 
 
 <!-- SCRIPT A OPTIMISER, ICI C'EST DE LA MERDE -->
-    @if(Request::is('golds'))
+    @if(Request::is('golds') || Request::is('/'))
     <script>
     //Flot Multiple Axes Line Chart
 	$(function() {
@@ -149,7 +149,7 @@
 	        }], {
 	            xaxes: [{
 	                mode: 'time',
-	                timeformat: "%y/%m/%d"
+	                timeformat: "%d/%m/%y"
 	            }],
 	            yaxes: [{
 
@@ -167,7 +167,7 @@
 	            tooltip: true,
 	            tooltipOpts: {
 	                content: "%s for %x was %y",
-	                xDateFormat: "%y-%m-%d %H:%M",
+	                xDateFormat: "%d-%m-%y %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);

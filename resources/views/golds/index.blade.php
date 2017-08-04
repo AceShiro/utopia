@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-	<h1 class="page_header">Gold Market Graph</h1>
+	<h1 class="page_header text-center">Gold Market Graph</h1>
 @endsection
 
 
@@ -30,6 +30,7 @@
           <!-- /.panel -->
     </div>
 
+    @if(Auth::check())
     <div class="col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -70,7 +71,6 @@
                     <!-- /.panel -->
     </div>
 
-
     <div class="col-lg-4">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -104,6 +104,7 @@
         </div>
                     <!-- /.panel -->
     </div>
+    @endif
                 <!-- /.col-lg-12 -->
 </div>
 
