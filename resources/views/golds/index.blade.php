@@ -19,6 +19,10 @@
                 <div class="flot-chart">
                     <div class="flot-chart-content" id="flot-line-chart-gold"></div>
                 </div>
+                <p>Zoom to: <button id="whole">Whole period</button>
+                		<button id="lastmonth">Last month</button>
+						<button id="lastweek">Last week</button>
+						<button id="lastday">Last day</button></p>
             </div>
               <!-- /.panel-body -->
         </div>

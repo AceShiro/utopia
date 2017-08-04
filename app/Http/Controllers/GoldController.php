@@ -82,8 +82,7 @@ class GoldController extends Controller
         $gold = Golds::find($id);
 
         // show the edit form and pass the gold
-        return View::make('golds.edit')
-            ->with('gold', $gold);
+        return View::make('golds.edit')->with('gold', $gold);
             
     }
 
