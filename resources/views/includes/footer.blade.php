@@ -40,15 +40,21 @@
 	    var epochT = (new Date).getTime();
 
 	    $("#whole").click(function () {
-			$.plot("#flot-line-chart-gold", [goldvalue], {
-				xaxis: { mode: "time" },
+			$.plot("#flot-line-chart-gold", [{
+	            data: goldvalue,
+	            label: "La valeur de l'Or"
+	        }], {
+				xaxes: [{
+	                mode: 'time',
+	                timeformat: "%d/%m/%y"
+	            }],
 				grid: {
 	                hoverable: true //IMPORTANT! this is needed for tooltip to work
 	            },
 	            tooltip: true,
 	            tooltipOpts: {
-	                content: "%s for %x was %y",
-	                xDateFormat: "%y-%m-%d %H:%M",
+	                content: "%s le %x était de %y Pa",
+	                xDateFormat: "%d-%m-%y à %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);
@@ -62,20 +68,29 @@
 		});
 
 	    $("#lastday").click(function () {
-			$.plot("#flot-line-chart-gold", [goldvalue], {
+			$.plot("#flot-line-chart-gold", [{
+	            data: goldvalue,
+	            label: "La valeur de l'Or"
+	        }], {
 				xaxis: {
 					mode: "time",
 					tickSize: [1, "hour"],
 					min: epochT - 86400000,
 					max: epochT,
 				},
+				yaxis: {
+					@foreach($golds->sortBy('created_at') as $gold)
+						min: {{ $gold->value }} - 5,
+						max: {{ $gold->value }} + 5,
+					@endforeach
+				},
 				grid: {
 	                hoverable: true //IMPORTANT! this is needed for tooltip to work
 	            },
 	            tooltip: true,
 	            tooltipOpts: {
-	                content: "%s for %x was %y",
-	                xDateFormat: "%y-%m-%d %H:%M",
+	                content: "%s le %x était de %y Pa",
+	                xDateFormat: "%d-%m-%y à %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);
@@ -89,7 +104,10 @@
 		});
 
 		$("#lastweek").click(function () {
-			$.plot("#flot-line-chart-gold", [goldvalue], {
+			$.plot("#flot-line-chart-gold", [{
+	            data: goldvalue,
+	            label: "La valeur de l'Or"
+	        }], {
 				xaxis: {
 					mode: "time",
 					tickSize: [1, "day"],
@@ -101,8 +119,8 @@
 	            },
 	            tooltip: true,
 	            tooltipOpts: {
-	                content: "%s for %x was %y",
-	                xDateFormat: "%y-%m-%d %H:%M",
+	                content: "%s le %x était de %y Pa",
+	                xDateFormat: "%d-%m-%y à %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);
@@ -116,7 +134,10 @@
 		});
 
 		$("#lastmonth").click(function () {
-			$.plot("#flot-line-chart-gold", [goldvalue], {
+			$.plot("#flot-line-chart-gold", [{
+	            data: goldvalue,
+	            label: "La valeur de l'Or"
+	        }], {
 				xaxis: {
 					mode: "time",
 					tickSize: [1, "day"],
@@ -128,8 +149,8 @@
 	            },
 	            tooltip: true,
 	            tooltipOpts: {
-	                content: "%s for %x was %y",
-	                xDateFormat: "%y-%m-%d %H:%M",
+	                content: "%s le %x était de %y Pa",
+	                xDateFormat: "%d-%m-%y à %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);
@@ -145,18 +166,11 @@
 	    function doPlot(position) {
 	        $.plot($("#flot-line-chart-gold"), [{
 	            data: goldvalue,
-	            label: "Gold value (Pa)"
+	            label: "La valeur de l'Or"
 	        }], {
 	            xaxes: [{
 	                mode: 'time',
 	                timeformat: "%d/%m/%y"
-	            }],
-	            yaxes: [{
-
-	            }, {
-	                // align if we are to the right
-	                alignTicksWithAxis: position == "right" ? 1 : null,
-	                position: position,
 	            }],
 	            legend: {
 	                position: 'sw'
@@ -166,8 +180,8 @@
 	            },
 	            tooltip: true,
 	            tooltipOpts: {
-	                content: "%s for %x was %y",
-	                xDateFormat: "%d-%m-%y %H:%M",
+	                content: "%s le %x était de %y Pa",
+	                xDateFormat: "%d-%m-%y à %H:%M",
 
 	                onHover: function(flotItem, $tooltipEl) {
 	                    // console.log(flotItem, $tooltipEl);
