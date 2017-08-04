@@ -152,7 +152,7 @@
 	                timeformat: "%y/%m/%d"
 	            }],
 	            yaxes: [{
-	                min: 0
+
 	            }, {
 	                // align if we are to the right
 	                alignTicksWithAxis: position == "right" ? 1 : null,
