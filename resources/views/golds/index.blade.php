@@ -79,26 +79,34 @@
           <!-- /.panel-heading -->
             <div class="panel-body">
                 <form method="post" action="{{url('golds')}}">
-				    <div class="form-group row">
-				    	{{csrf_field()}}
-				    	<label for="lgFormGroupInput"></label>
+                	{{csrf_field()}}
+				    <div class="form-group row {{ $errors->has('value') ? ' has-error' : '' }}">
+				    	
 				    	<div class="col-lg-8">
+				    	<label for="value">Value</label>
 				    		<div class="form-group input-group">
-				        		<input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Example: 190" name="value">
+				        		<input type="text" class="form-control form-control-lg" id="value" placeholder="Example: 190" name="value">
 				        		<span class="input-group-addon">Pa</span>
 				    		</div>
 				    	</div>
-
-				    	<input type="submit" class="btn btn-success">
 				    </div>
 
-				    <div class="row">
+				    <div class="form-group input-group {{ $errors->has('created_at') ? ' has-error' : '' }}">
+				    	<label for="time">Time</label>
+				    	<input type="text" class="form-control form-control-lg" id="time" name="time" required>
+				    </div>
+
+				    <div class="form-group">
+				    	<input type="submit" class="btn btn-success">
+				    </div>
+				</form>
+
+					<div class="row">
 				    	<div class="col-lg-8">
 				    		Current Albion Time: <br/>
 				    		{{ date('H:i:s') }}
 				    	</div>
 				    </div>
-				</form>
             </div>
                         <!-- /.panel-body -->
         </div>

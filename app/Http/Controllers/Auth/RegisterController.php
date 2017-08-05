@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
+}
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -18,7 +19,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+    
 
     use RegistersUsers;
 
@@ -26,14 +27,14 @@ class RegisterController extends Controller
      * Where to redirect users after registration.
      *
      * @var string
-     */
+     
     protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
      *
      * @return void
-     */
+     
     public function __construct()
     {
         $this->middleware('guest');
@@ -44,7 +45,7 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
-     */
+     
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -59,7 +60,7 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      * @return \App\User
-     */
+     
     protected function create(array $data)
     {
         return User::create([
@@ -68,4 +69,4 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-}
+    /*

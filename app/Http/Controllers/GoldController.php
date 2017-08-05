@@ -44,6 +44,7 @@ class GoldController extends Controller
         
         $gold = new Golds([
           'value' => $request->get('value'),
+          'time' => $request->get('time'),
         ]);
 
         $gold->save();
