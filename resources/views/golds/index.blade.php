@@ -50,7 +50,7 @@
 					<tbody>
 						@foreach($golds as $post)
 							<tr>
-							    <td>{{$post['created_at']}}</td>
+							    <td>{{$post['time']}}</td>
 							    <td>{{$post['value']}}</td>
 							    <td><a href="{{action('GoldController@edit', $post['id'])}}" class="btn btn-warning">Edit</a></td>
 							    <td>
@@ -85,7 +85,7 @@
 				    	<div class="col-lg-8">
 				    	<label for="value">Value</label>
 				    		<div class="form-group input-group">
-				        		<input type="text" class="form-control form-control-lg" id="value" placeholder="Example: 190" name="value">
+				        		<input type="text" class="form-control form-control-lg" id="value" placeholder="Example: 190" name="value" required>
 				        		<span class="input-group-addon">Pa</span>
 				    		</div>
 				    	</div>
@@ -93,7 +93,7 @@
 
 				    <div class="form-group input-group {{ $errors->has('created_at') ? ' has-error' : '' }}">
 				    	<label for="time">Time</label>
-				    	<input type="text" class="form-control form-control-lg" id="time" name="time" required>
+				    	<input type="datetime-local" class="form-control form-control-lg" id="time" name="time" required>
 				    </div>
 
 				    <div class="form-group">

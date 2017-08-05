@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Golds extends Model
 {
-    protected $fillable = ['value, time'];
+    protected $fillable = ['value', 'time'];
 }

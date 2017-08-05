@@ -33,7 +33,7 @@
 	$(function() {
 	    var goldvalue = [
 	    @foreach($golds as $gold)
-	    	[{{strtotime($gold->created_at)}} * 1000, {{ $gold->value }}],
+	    	[{{strtotime($gold->time)}} * 1000, {{ $gold->value }}],
 	    @endforeach
 	    ];
 
