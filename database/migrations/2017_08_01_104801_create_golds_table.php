@@ -19,6 +19,8 @@ class CreateGoldsTable extends Migration
 
             $table->integer('value');
 
+            $table->datetime('time');
+
             $table->timestamps();
         });
     }

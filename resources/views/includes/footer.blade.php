@@ -62,7 +62,7 @@
 	            },
 	            series: {
 			        lines: { show: true },
-			        points: { show: true }
+			        points: { show: false }
 			    }
 			});
 		});
@@ -98,7 +98,7 @@
 	            },
 	            series: {
 			        lines: { show: true },
-			        points: { show: true }
+			        points: { show: false }
 			    }
 			});
 		});
@@ -128,7 +128,7 @@
 	            },
 	            series: {
 			        lines: { show: true },
-			        points: { show: true }
+			        points: { show: false }
 			    }
 			});
 		});
@@ -158,7 +158,7 @@
 	            },
 	            series: {
 			        lines: { show: true },
-			        points: { show: true }
+			        points: { show: false }
 			    }
 			});
 		});
@@ -189,7 +189,7 @@
 	            },
 	            series: {
 			        lines: { show: true },
-			        points: { show: true }
+			        points: { show: false }
 			    }
 
 	        });
